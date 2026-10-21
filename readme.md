@@ -12,6 +12,7 @@
 | [xor-basis.md](xor-basis.md) | 线性基与异或空间 |
 | [lca-properties.md](lca-properties.md) | LCA 的进阶性质与应用 |
 | [inclusion-exclusion.md](inclusion-exclusion.md) | 容斥原理：建模、项的合并与反演 |
+| [kmp-and-border-theory.md](kmp-and-border-theory.md) | KMP、Border 理论与失配树 |
 | [ABC480-A-G.md](ABC480-A-G.md) | AtCoder ABC480 A–G |
 
 各篇 Markdown 与 `asset/` 文件夹放在同一级。图片使用相对路径，可离线查看。原 ZIP 中的文章、配图及 Benq 的 PDF 均保留。
