@@ -15,6 +15,7 @@
 | [kmp-and-border-theory.md](kmp-and-border-theory.md) | KMP、Border 理论与失配树 |
 | [number-theory.md](number-theory.md) | ICPC 数论：常用定理、证明与应用 |
 | [combinatorics.md](combinatorics.md) | 组合数学：计数建模、唯一分解与组合 DP |
+| [combinatorial-dp.md](combinatorial-dp.md) | 组合数学 + DP：六道例题详解与迁移练习 |
 | [ABC480-A-G.md](ABC480-A-G.md) | AtCoder ABC480 A–G |
 
 各篇 Markdown 与 `asset/` 文件夹放在同一级。图片使用相对路径，可离线查看。原 ZIP 中的文章、配图及 Benq 的 PDF 均保留。
