@@ -13,7 +13,7 @@
 | [lca-properties.md](lca-properties.md) | [配套分析](lca-properties-exercises.md) | LCA 的进阶性质与应用 |
 | [inclusion-exclusion.md](inclusion-exclusion.md) | [配套分析](inclusion-exclusion-exercises.md) | 容斥原理：建模、项的合并与反演 |
 | [kmp-and-border-theory.md](kmp-and-border-theory.md) | [配套分析](kmp-and-border-theory-exercises.md) | KMP、Border 理论与失配树 |
-| [number-theory.md](number-theory.md) | [配套分析](number-theory-exercises.md) | ICPC 数论：常用定理、证明与应用 |
+| [number-theory.md](number-theory.md) | [配套分析](number-theory-exercises.md) | ICPC 数论：常用定理、欧拉筛与积性函数、证明与应用 |
 | [combinatorics.md](combinatorics.md) | [配套分析](combinatorics-exercises.md) | 组合数学：计数建模、唯一分解与组合 DP |
 | [combinatorial-dp.md](combinatorial-dp.md) | [配套分析](combinatorial-dp-exercises.md) | 组合数学 + DP：六道例题详解与迁移练习 |
 | [ABC480-A-G.md](ABC480-A-G.md) | 已含 A–G 题解 | AtCoder ABC480 A–G |
