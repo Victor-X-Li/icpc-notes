@@ -2,6 +2,7 @@
 
 - This repository (`Victor-X-Li/icpc-notes`) contains the user's ICPC/CCPC study notes. Add future explanations here when requested, and update `readme.md`.
 - Preserve approved existing analysis, formulas, images, and attachments unless the user requests revisions. When asked only to add exercises, add exercise paragraphs without changing the analysis.
+- Whenever exercises are added to an explanatory note, add their complete analyses to the corresponding `<topic>-exercises.md` in the same update. Include optional, advanced, and transfer exercises; check that every assigned problem has an analysis entry or an explicit cross-reference to its complete analysis. Keep exercise links and analysis coverage synchronized when exercises are changed or removed.
 - Write natural, readable Chinese for the learner. Explain how the idea arises, state conditions, and prove the key steps. Do not compress away reasoning or write in an overly literary style.
 - Start from the user's stated knowledge. Default to no complete code and no quizzes.
 - Use the current `icpc-algorithm-explanation` skill and, when choosing practice, the current `icpc-problem-selection` skill when available. Read relevant authoritative primary materials, verify real problem statements, and integrate a few exercises in the matching sections with independently estimated CF difficulties.
