@@ -574,6 +574,21 @@ $$
 
 这里利用了两个坐标范围同为 $[1,N]$。若改成 $[1,A]\times[1,B]$，不能把 $N$ 换成 $\min(A,B)$ 后继续套式子；应重新按坐标范围分析，或回到第 7 节后面的互质区间计数与第 8 节的 GCD 分类。
 
+#### 配套练习：从筛出数组，到自己确定要筛的函数
+
+下面四题按建议顺序排列。前两题是短练，检查筛出的数组是否真正用得起来；后两题是主练，重点是从计数对象推导函数，再决定怎样批量计算。难度是按 CF 标尺独立估计，非平台官方 rating。
+
+| 题目 | 来源 / 年份 | 估计难度 | 训练重点与前置 |
+| --- | --- | --- | --- |
+| [ABC292 C — Four Variables](https://atcoder.jp/contests/abc292/tasks/abc292_c) | AtCoder，2023 | 1500 | 把乘法约束转成约数计数；练习线性筛 $\tau$。前置：乘法原理。 |
+| [ABC177 E — Coprime](https://atcoder.jp/contests/abc177/tasks/abc177_e) | AtCoder，2020 | 1600 | 最小质因子表与批量分解，区分一个数内的重复质因子和不同数共享质因子。前置：GCD、唯一分解。 |
+| [CF1499 D — The Number of Pairs](https://codeforces.com/problemset/problem/1499/D) | Codeforces，2021 | 2200 | 从 GCD、LCM 约束推出一个计数函数，自己写出新质因子与重复质因子两种递推。前置：约数枚举。 |
+| [CF1900 D — Small GCD](https://codeforces.com/problemset/problem/1900/D) | Codeforces，2023 | 2300 | $\varphi$ 的批量计算与 GCD 贡献统计结合。前置：排序、基础贡献法，以及第 8 节的约数恒等式；建议读完第 8 节再做。 |
+
+这些题也有其他可行解法。作为本节训练，建议分别使用线性筛 $\tau$、最小质因子、自己推导的积性函数、$\varphi$ 完成一次；不要求为了使用欧拉筛而排斥更简单的做法。后两题不需要莫比乌斯反演或进阶筛法。你已经会基础模板，可以很快完成前两题，把主要时间留给后两题。
+
+四题的完整推导、复杂度与边界情况已补入[配套习题分析的第 10—13 题](number-theory-exercises.md#10-abc292-c--four-variables)。建议独立尝试后再看。
+
 ### 为什么欧拉定理可以用一个排列来证明？
 
 假设 $\gcd(a,m)=1$。取出模 $m$ 下全部 $\varphi(m)$ 个互质余数，组成集合 $R$。乘以 $a$ 以后，它们仍然与 $m$ 互质；而且若 $ax\equiv ay\pmod m$，由 $a$ 可逆可得 $x\equiv y\pmod m$。
