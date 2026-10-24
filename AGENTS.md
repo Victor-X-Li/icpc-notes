@@ -9,3 +9,7 @@
 - Use lowercase English topic filenames with hyphens. Put accurate explanatory images in `asset/` and use relative paths. Preserve inherited filenames unless renaming is requested.
 - Before committing, check mathematical boundary cases, any new formulas with small exhaustive examples where practical, local links, and image labels. Do not add verification scripts or temporary files to the notes repository.
 - The existing third-party PDF is a supplied attachment. Do not assign a repository-wide license to it or to other third-party content.
+
+# Practice selection continuity
+
+- On 2026-10-24, the user said the first small-to-large / DSU on Tree selection was too classic and that they would record those problems. Treat ABC329 F, CF600 E, CF375 D, IOI 2011 Race, and CF1923 E as already recommended; do not present them as fresh training in subsequent selections unless the user requests review. This does not mean all five were completed. The user separately reported completing the first five problems in the USACO Guide merging chapter.

@@ -9,7 +9,7 @@
 | [randomness-and-string-hashing.md](randomness-and-string-hashing.md) | [配套分析](randomness-and-string-hashing-exercises.md) | 随机数与字符串哈希 |
 | [graph-modeling.md](graph-modeling.md) | [配套分析](graph-modeling-exercises.md) | 优化建图与隐式图 |
 | [binary-trie.md](binary-trie.md) | [配套分析](binary-trie-exercises.md) | 01 Trie 与二进制建模：阈值计数、排名与整体异或，附动态计数与子段计数例题 |
-| [small-to-large-and-dsu-on-tree.md](small-to-large-and-dsu-on-tree.md) | [配套分析](small-to-large-and-dsu-on-tree-exercises.md) | 启发式合并与 DSU on Tree：名词关系、摊还证明、重儿子保留及路径配对 |
+| [small-to-large-and-dsu-on-tree.md](small-to-large-and-dsu-on-tree.md) | [配套分析](small-to-large-and-dsu-on-tree-exercises.md) | 启发式合并与 DSU on Tree：摊还证明、重儿子保留、换根、冲突处理与稀疏 DP；四道迁移训练 |
 | [xor-basis.md](xor-basis.md) | [配套分析](xor-basis-exercises.md) | 线性基与异或空间 |
 | [lca-properties.md](lca-properties.md) | [配套分析](lca-properties-exercises.md) | LCA 的进阶性质与应用 |
 | [inclusion-exclusion.md](inclusion-exclusion.md) | [配套分析](inclusion-exclusion-exercises.md) | 容斥原理：建模、项的合并与反演 |
