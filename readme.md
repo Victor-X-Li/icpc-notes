@@ -18,6 +18,7 @@
 | [combinatorics.md](combinatorics.md) | [配套分析](combinatorics-exercises.md) | 组合数学：计数建模、唯一分解与组合 DP |
 | [combinatorial-dp.md](combinatorial-dp.md) | [配套分析](combinatorial-dp-exercises.md) | 组合数学 + DP：六道例题详解与迁移练习 |
 | [chengdu-2025-tutorial.md](chengdu-2025-tutorial.md) | 已含九题完整分析 | 2025 ICPC 成都区域赛 / 第四届 Universal Cup 成都站：估算 ≤2500 的八题，以及额外提高题 E |
+| [abc481-review.md](abc481-review.md) | 已含 E、F、G 完整分析 | ABC481：半平面计数、巨大路径值排名压缩、随机次序统计量与分治卷积 |
 | [ABC480-A-G.md](ABC480-A-G.md) | 已含 A–G 题解 | AtCoder ABC480 A–G |
 
 15 篇专题讲解各有一篇 `-exercises.md` 配套分析，覆盖原文全部练习，包括短练习、迁移练习、可选提高和综合练习。正文具名例题也保留分析入口；同题在不同专题重复出现时互相链接。每题说明建模、关键推导、算法、复杂度与边界，默认不附完整代码。比赛复盘直接在对应文件内提供完整分析；ABC480 A–G 题解合集沿用原文。
