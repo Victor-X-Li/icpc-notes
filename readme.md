@@ -9,6 +9,7 @@
 | [randomness-and-string-hashing.md](randomness-and-string-hashing.md) | [配套分析](randomness-and-string-hashing-exercises.md) | 随机数与字符串哈希 |
 | [graph-modeling.md](graph-modeling.md) | [配套分析](graph-modeling-exercises.md) | 优化建图与隐式图 |
 | [binary-trie.md](binary-trie.md) | [配套分析](binary-trie-exercises.md) | 01 Trie 与二进制建模：阈值计数、排名与整体异或，附动态计数与子段计数例题 |
+| [small-to-large-and-dsu-on-tree.md](small-to-large-and-dsu-on-tree.md) | [配套分析](small-to-large-and-dsu-on-tree-exercises.md) | 启发式合并与 DSU on Tree：名词关系、摊还证明、重儿子保留及路径配对 |
 | [xor-basis.md](xor-basis.md) | [配套分析](xor-basis-exercises.md) | 线性基与异或空间 |
 | [lca-properties.md](lca-properties.md) | [配套分析](lca-properties-exercises.md) | LCA 的进阶性质与应用 |
 | [inclusion-exclusion.md](inclusion-exclusion.md) | [配套分析](inclusion-exclusion-exercises.md) | 容斥原理：建模、项的合并与反演 |
@@ -18,7 +19,7 @@
 | [combinatorial-dp.md](combinatorial-dp.md) | [配套分析](combinatorial-dp-exercises.md) | 组合数学 + DP：六道例题详解与迁移练习 |
 | [ABC480-A-G.md](ABC480-A-G.md) | 已含 A–G 题解 | AtCoder ABC480 A–G |
 
-14 篇专题讲解各有一篇 `-exercises.md` 配套分析，覆盖原文全部练习，包括短练习、迁移练习、可选提高和综合练习。正文具名例题也保留分析入口；同题在不同专题重复出现时互相链接。每题说明建模、关键推导、算法、复杂度与边界，默认不附完整代码。ABC480 A–G 已是题解合集，沿用原文。
+15 篇专题讲解各有一篇 `-exercises.md` 配套分析，覆盖原文全部练习，包括短练习、迁移练习、可选提高和综合练习。正文具名例题也保留分析入口；同题在不同专题重复出现时互相链接。每题说明建模、关键推导、算法、复杂度与边界，默认不附完整代码。ABC480 A–G 已是题解合集，沿用原文。
 
 各篇 Markdown 与 `asset/` 文件夹放在同一级。图片使用相对路径，可离线查看。原 ZIP 中的文章、配图及 Benq 的 PDF 均保留。
 
