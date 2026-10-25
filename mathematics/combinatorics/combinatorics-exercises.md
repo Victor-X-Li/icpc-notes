@@ -36,7 +36,7 @@ $$\boxed{f_{i+1}(j+t)\mathrel{+}=f_i(j)\binom{j+t}{t},\quad0\le t\le\min(c_{i+1}
 
 [原题](https://codeforces.com/problemset/problem/1794/D)
 
-这道练习后来成为组合 DP 篇的完整例题。独立推导、状态与组合数系数见[组合 DP 习题分析第 4 题](combinatorial-dp-exercises.md#4-cf1794-d--counting-factorizations)。
+这道练习后来成为组合 DP 篇的完整例题。独立推导、状态与组合数系数见[组合 DP 习题分析第 4 题](../combinatorial-dp/combinatorial-dp-exercises.md#4-cf1794-d--counting-factorizations)。
 
 要检查的是两种身份：不同质数底数只能各选一次，相同输入副本却没有身份；选定底数集合后，按质数递增给指数位置固定编号。于是“选某个副本作底数”不能乘出现次数，而“把剩余相同指数放进哪些位置”应乘组合数。该分析给出了保留实际方案数的 $O(n^2)$ DP，不要求使用阶乘归一化。
 

@@ -1,33 +1,47 @@
-# ICPC 算法讲解
+# ICPC Notes
 
-| 讲解 note | 习题分析 | 主题 |
+## 专题讲解
+
+每个小专题单独建目录，讲解与对应的 `-exercises.md` 放在同一目录。以下 15 个专题均有配套习题分析。
+
+| 分类 | 小专题与讲解 | 习题分析 |
 | --- | --- | --- |
-| [expected-value.md](expected-value.md) | [配套分析](expected-value-exercises.md) | 数学期望 |
-| [cartesian-tree-and-monotonic-stack.md](cartesian-tree-and-monotonic-stack.md) | [配套分析](cartesian-tree-and-monotonic-stack-exercises.md) | 笛卡尔树与单调栈 |
-| [dijkstra-and-shortest-path-trees.md](dijkstra-and-shortest-path-trees.md) | [配套分析](dijkstra-and-shortest-path-trees-exercises.md) | Dijkstra 进阶与最短路树 |
-| [dfs-tarjan-and-block-cut-trees.md](dfs-tarjan-and-block-cut-trees.md) | [配套分析](dfs-tarjan-and-block-cut-trees-exercises.md) | DFS 树、Tarjan 与圆方树 |
-| [randomness-and-string-hashing.md](randomness-and-string-hashing.md) | [配套分析](randomness-and-string-hashing-exercises.md) | 随机数与字符串哈希 |
-| [graph-modeling.md](graph-modeling.md) | [配套分析](graph-modeling-exercises.md) | 优化建图与隐式图 |
-| [binary-trie.md](binary-trie.md) | [配套分析](binary-trie-exercises.md) | 01 Trie 与二进制建模：阈值计数、排名与整体异或，附动态计数与子段计数例题 |
-| [small-to-large-and-dsu-on-tree.md](small-to-large-and-dsu-on-tree.md) | [配套分析](small-to-large-and-dsu-on-tree-exercises.md) | 启发式合并与 DSU on Tree：摊还证明、重儿子保留、换根、冲突处理与稀疏 DP；四道迁移训练 |
-| [xor-basis.md](xor-basis.md) | [配套分析](xor-basis-exercises.md) | 线性基与异或空间 |
-| [lca-properties.md](lca-properties.md) | [配套分析](lca-properties-exercises.md) | LCA 的进阶性质与应用 |
-| [inclusion-exclusion.md](inclusion-exclusion.md) | [配套分析](inclusion-exclusion-exercises.md) | 容斥原理：建模、项的合并与反演 |
-| [kmp-and-border-theory.md](kmp-and-border-theory.md) | [配套分析](kmp-and-border-theory-exercises.md) | KMP、Border 理论与失配树 |
-| [number-theory.md](number-theory.md) | [配套分析](number-theory-exercises.md) | ICPC 数论：常用定理、欧拉筛与积性函数、证明与应用；含欧拉筛与 CRT 专项练习及分析 |
-| [combinatorics.md](combinatorics.md) | [配套分析](combinatorics-exercises.md) | 组合数学：计数建模、唯一分解与组合 DP |
-| [combinatorial-dp.md](combinatorial-dp.md) | [配套分析](combinatorial-dp-exercises.md) | 组合数学 + DP：六道例题详解与迁移练习 |
-| [chengdu-2025-tutorial.md](chengdu-2025-tutorial.md) | 已含九题完整分析 | 2025 ICPC 成都区域赛 / 第四届 Universal Cup 成都站：估算 ≤2500 的八题，以及额外提高题 E |
-| [abc481-review.md](abc481-review.md) | 已含 E、F、G 完整分析 | ABC481：半平面计数、巨大路径值排名压缩、随机次序统计量与分治卷积 |
-| [cf-2277-review.md](cf-2277-review.md) | 已含 C、E、F 完整分析 | Codeforces Round 1129 (Div. 2)：最终路径上界、交互排列编码、逆序连通分量与重构树 |
-| [ABC480-A-G.md](ABC480-A-G.md) | 已含 A–G 题解 | AtCoder ABC480 A–G |
+| data structure | [01 Trie 与二进制建模](data-structure/binary-trie/binary-trie.md) | [exercise](data-structure/binary-trie/binary-trie-exercises.md) |
+| data structure | [笛卡尔树与单调栈](data-structure/cartesian-tree-and-monotonic-stack/cartesian-tree-and-monotonic-stack.md) | [exercise](data-structure/cartesian-tree-and-monotonic-stack/cartesian-tree-and-monotonic-stack-exercises.md) |
+| graph and tree | [Dijkstra 进阶与最短路树](graph-and-tree/dijkstra-and-shortest-path-trees/dijkstra-and-shortest-path-trees.md) | [exercise](graph-and-tree/dijkstra-and-shortest-path-trees/dijkstra-and-shortest-path-trees-exercises.md) |
+| graph and tree | [DFS 树、Tarjan 与圆方树](graph-and-tree/dfs-tarjan-and-block-cut-trees/dfs-tarjan-and-block-cut-trees.md) | [exercise](graph-and-tree/dfs-tarjan-and-block-cut-trees/dfs-tarjan-and-block-cut-trees-exercises.md) |
+| graph and tree | [优化建图与隐式图](graph-and-tree/graph-modeling/graph-modeling.md) | [exercise](graph-and-tree/graph-modeling/graph-modeling-exercises.md) |
+| graph and tree | [LCA 的进阶性质与应用](graph-and-tree/lca-properties/lca-properties.md) | [exercise](graph-and-tree/lca-properties/lca-properties-exercises.md) |
+| graph and tree | [启发式合并与 DSU on Tree](graph-and-tree/small-to-large-and-dsu-on-tree/small-to-large-and-dsu-on-tree.md) | [exercise](graph-and-tree/small-to-large-and-dsu-on-tree/small-to-large-and-dsu-on-tree-exercises.md) |
+| mathematics | [数学期望](mathematics/expected-value/expected-value.md) | [exercise](mathematics/expected-value/expected-value-exercises.md) |
+| mathematics | [容斥原理](mathematics/inclusion-exclusion/inclusion-exclusion.md) | [exercise](mathematics/inclusion-exclusion/inclusion-exclusion-exercises.md) |
+| mathematics | [ICPC 数论：欧拉筛、CRT 与常用定理](mathematics/number-theory/number-theory.md) | [exercise](mathematics/number-theory/number-theory-exercises.md) |
+| mathematics | [组合数学](mathematics/combinatorics/combinatorics.md) | [exercise](mathematics/combinatorics/combinatorics-exercises.md) |
+| mathematics | [组合数学 + DP](mathematics/combinatorial-dp/combinatorial-dp.md) | [exercise](mathematics/combinatorial-dp/combinatorial-dp-exercises.md) |
+| mathematics | [线性基与异或空间](mathematics/xor-basis/xor-basis.md) | [exercise](mathematics/xor-basis/xor-basis-exercises.md) |
+| string | [KMP、Border 理论与失配树](string/kmp-and-border-theory/kmp-and-border-theory.md) | [exercise](string/kmp-and-border-theory/kmp-and-border-theory-exercises.md) |
+| string | [随机数与字符串哈希](string/randomness-and-string-hashing/randomness-and-string-hashing.md) | [exercise](string/randomness-and-string-hashing/randomness-and-string-hashing-exercises.md) |
 
-15 篇专题讲解各有一篇 `-exercises.md` 配套分析，覆盖原文全部练习，包括短练习、迁移练习、可选提高和综合练习。正文具名例题也保留分析入口；同题在不同专题重复出现时互相链接。每题说明建模、关键推导、算法、复杂度与边界，默认不附完整代码。比赛复盘直接在对应文件内提供完整分析；ABC480 A–G 题解合集沿用原文。
+其他知识点放在 [misc/](misc/readme.md)，目前尚无独立专题。线性基按数学原理归入 mathematics；启发式合并与 DSU on Tree 归入 graph and tree。
 
-各篇 Markdown 与 `asset/` 文件夹放在同一级。图片使用相对路径，可离线查看。原 ZIP 中的文章、配图及 Benq 的 PDF 均保留。
+## 比赛复盘
 
-后续专题继续放在仓库根目录，使用全小写英文文件名，多词以连字符连接；图片放入 `asset/`，并在此目录表中补充文章链接。已认可的旧文章不因添加新专题而改写。
+所有 AtCoder、Codeforces、QOJ 等比赛的复盘统一放在 [contest/](contest/readme.md)。比赛文章已含完整分析，不另建重复的 exercise 文件。
+
+| 比赛 | 复盘内容 |
+| --- | --- |
+| [2024 CCPC 哈尔滨站 / 第三届 Universal Cup 哈尔滨站](contest/harbin-2024-review.md) | 估算难度 ≤2500：C、M、G、K、J、A、B、L |
+| [2025 ICPC 成都区域赛 / 第四届 Universal Cup 成都站](contest/chengdu-2025-tutorial.md) | 估算难度 ≤2500 的八题，以及额外提高题 E |
+| [AtCoder ABC480](contest/ABC480-A-G.md) | A–G 题解与参考实现 |
+| [AtCoder ABC481](contest/abc481-review.md) | E、F、G 完整分析 |
+| [Codeforces Round 1129 (Div. 2)，CF2277](contest/cf-2277-review.md) | C、E、F 完整分析 |
+
+## 文件与同步约定
+
+专题目录使用 `data-structure/`、`graph-and-tree/`、`mathematics/`、`string/`、`misc/`；每个小专题沿用语义化英文目录名与原有文章文件名。共享图片集中放在根目录 `asset/`：专题文章使用 `../../asset/`，比赛文章使用 `../asset/` 相对链接，可离线阅读。原 ZIP 中的文章、配图与 Benq 的 PDF 附件均保留。
+
+后续讲解和比赛复盘继续按此目录结构添加，并同步目录与习题分析；不因增加文章而改写已认可的旧讲解。
 
 仓库地址：https://github.com/Victor-X-Li/icpc-notes
 
-Git 同步时，首次使用 `git clone https://github.com/Victor-X-Li/icpc-notes.git`；以后在本地仓库中运行 `git pull --ff-only` 获取更新。若本地有自己的修改，先提交或暂存再同步。
+首次同步：`git clone https://github.com/Victor-X-Li/icpc-notes.git`；以后在仓库内运行 `git pull --ff-only`。若本地有自己的修改，先提交或暂存再同步。

@@ -74,6 +74,6 @@ $$w(u,v)=\min(|x_u-x_v|,|y_u-y_v|).$$
 
 [原题](https://codeforces.com/problemset/problem/786/B)
 
-本题也出现在最短路篇。完整的两套线段树建图、合法路线的双向对应、规模与边界分析见[对应习题分析第 3 题](dijkstra-and-shortest-path-trees-exercises.md#3-cf786-b--legacy)。
+本题也出现在最短路篇。完整的两套线段树建图、合法路线的双向对应、规模与边界分析见[对应习题分析第 3 题](../dijkstra-and-shortest-path-trees/dijkstra-and-shortest-path-trees-exercises.md#3-cf786-b--legacy)。
 
 从本章角度再明确一次接口：点到区间是“先付费，再沿向下树选叶子”；区间到点是“从叶子沿向上树汇总，再付费到目标”。共 $O(n)$ 个辅助点，每次操作只接 $O(\log n)$ 条边。两套结构共享真实叶子，但不能共享内部零权通行方向。
