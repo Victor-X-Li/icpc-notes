@@ -140,6 +140,10 @@ Benq PPT 第 11–18 张逻辑页把生成空间、矩阵、像与核串在一�
 
 这些公式都出现二的幂，但 $r$、$W-r$、$n-r$ 分别表示像空间、陪集数量对应的维度和核的维度，不能仅凭公式长相记忆。
 
+> **团队 VP 回练（估算 CF 难度）**：[C — XOR-Excluding Sets](https://qoj.ac/contest/2828/problem/16117)（SEERC 2025 / 第四届 Universal Cup 第 11 站，约 2500）。在零异或子集计数之外，还要区分哪些原元素能参与非空零异或组合，适合练习给消元过程附加表示信息。完整分析见 [习题分析第 6 节](xor-basis-exercises.md#6-seerc-2025-c--xor-excluding-sets)。
+
+> **团队网络赛回练（估算 CF 难度）**：[A — All Closed](https://qoj.ac/contest/4113/problem/20236)（2026 ICPC 亚洲东部大陆网络赛第二场，约 2500，难度上沿）。从“所有集合同时补入相同元素”转成子空间的封闭扩张，需要理解生成空间、子空间的包含关系，以及秩如何限制扩张次数。完整分析见 [习题分析第 7 节](xor-basis-exercises.md#7-icpc-2026-online-ii-a--all-closed)。
+
 ## 5. 三道练习：压缩后，后续条件还在不在？
 
 以下保留原稿从 USACO Guide 练习列表选取的三题；列表包含多个平台，并非都是 USACO 原题。难度按 CF 800–3500 尺度独立估算。
