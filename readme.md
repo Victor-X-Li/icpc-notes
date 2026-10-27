@@ -18,7 +18,7 @@
 | mathematics | [ICPC 数论：欧拉筛、CRT 与常用定理](mathematics/number-theory/number-theory.md) | [exercise](mathematics/number-theory/number-theory-exercises.md) |
 | mathematics | [组合数学](mathematics/combinatorics/combinatorics.md) | [exercise](mathematics/combinatorics/combinatorics-exercises.md) |
 | mathematics | [组合数学 + DP](mathematics/combinatorial-dp/combinatorial-dp.md) | [exercise](mathematics/combinatorial-dp/combinatorial-dp-exercises.md) |
-| mathematics | [线性基与异或空间（含团队比赛回练）](mathematics/xor-basis/xor-basis.md) | [exercise](mathematics/xor-basis/xor-basis-exercises.md) |
+| mathematics | [线性基与异或空间（含最值、排名参考代码与团队比赛回练）](mathematics/xor-basis/xor-basis.md) | [exercise](mathematics/xor-basis/xor-basis-exercises.md) |
 | string | [KMP、Border 理论与失配树（1-index；自动机为赛后附录）](string/kmp-and-border-theory/kmp-and-border-theory.md) | [exercise](string/kmp-and-border-theory/kmp-and-border-theory-exercises.md) |
 | string | [随机数与字符串哈希](string/randomness-and-string-hashing/randomness-and-string-hashing.md) | [exercise](string/randomness-and-string-hashing/randomness-and-string-hashing-exercises.md) |
 
@@ -45,3 +45,7 @@
 仓库地址：https://github.com/Victor-X-Li/icpc-notes
 
 首次同步：`git clone https://github.com/Victor-X-Li/icpc-notes.git`；以后在仓库内运行 `git pull --ff-only`。若本地有自己的修改，先提交或暂存再同步。
+
+## 训练复盘
+
+- [2026-10-27：KMP 收尾与线性基入门](misc/training-recaps/2026-10-27.md)
