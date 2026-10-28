@@ -2,7 +2,7 @@
 
 ## 专题讲解
 
-每个小专题单独建目录，讲解与对应的 `-exercises.md` 放在同一目录。以下 15 个专题均有配套习题分析。
+每个小专题单独建目录，讲解与对应的 `-exercises.md` 放在同一目录。以下 16 个专题均有配套习题分析。
 
 | 分类 | 小专题与讲解 | 习题分析 |
 | --- | --- | --- |
@@ -19,6 +19,7 @@
 | mathematics | [组合数学](mathematics/combinatorics/combinatorics.md) | [exercise](mathematics/combinatorics/combinatorics-exercises.md) |
 | mathematics | [组合数学 + DP](mathematics/combinatorial-dp/combinatorial-dp.md) | [exercise](mathematics/combinatorial-dp/combinatorial-dp-exercises.md) |
 | mathematics | [线性基与异或空间（含最值、排名参考代码与团队比赛回练）](mathematics/xor-basis/xor-basis.md) | [exercise](mathematics/xor-basis/xor-basis-exercises.md) |
+| mathematics | [二进制性质：逐位贡献、最高不同位与集合包含](mathematics/binary-properties/binary-properties.md) | [exercise](mathematics/binary-properties/binary-properties-exercises.md) |
 | string | [KMP、Border 理论与失配树（1-index；自动机为赛后附录）](string/kmp-and-border-theory/kmp-and-border-theory.md) | [exercise](string/kmp-and-border-theory/kmp-and-border-theory-exercises.md) |
 | string | [随机数与字符串哈希](string/randomness-and-string-hashing/randomness-and-string-hashing.md) | [exercise](string/randomness-and-string-hashing/randomness-and-string-hashing-exercises.md) |
 
@@ -49,3 +50,4 @@
 ## 训练复盘
 
 - [2026-10-27：KMP 收尾与线性基入门](misc/training-recaps/2026-10-27.md)
+
