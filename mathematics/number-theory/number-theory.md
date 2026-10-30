@@ -49,6 +49,8 @@ $$
 
 每至多两次取余，较大的正参数至少减半，所以时间为 $O(\log\max(|a|,|b|))$；并不是每次取余都减半。负参数可先取绝对值，最后调整系数符号。
 
+关于标准扩欧为什么返回较小的系数，以及回代乘法是否会溢出，见补充篇[扩展欧几里得的系数界](extended-euclid-coefficient-bounds.md)。它证明了不同正整数下 $|x|\le b/(2g),|y|\le a/(2g)$，并单独处理相等与零参数。
+
 ### 可达性问题，为什么常常只剩一个 GCD？
 
 例如在数轴上允许走 $+6,-6,+10,-10$，从 $0$ 能到达哪些整数？答案是所有偶数，因为 $\gcd(6,10)=2$，且 $2=2\cdot6-10$。
@@ -1022,3 +1024,4 @@ $$
 - [Number Theory: In Context，§5.4 Using the Chinese Remainder Theorem](https://www.math.gordon.edu/ntic/ntic/section-using-crt.html)：直接构造、逆元存在性、唯一性，以及从小模数恢复大模数信息。
 - [University of Maryland，Math 406 §4.3](https://www.math.umd.edu/~immortal/MATH406/lecturenotes/ch4-3.pdf)：两两互质 CRT 的构造证明。这里只使用其 CRT 部分。
 - [ACL Contest 1 B 官方题解](https://atcoder.jp/contests/acl1/editorial/118)；[ABC286 F 官方题解](https://atcoder.jp/contests/abc286/editorial/6449)。两题的关键推导见配套习题分析第 14、15 题。
+

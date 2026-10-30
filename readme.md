@@ -23,6 +23,8 @@
 | string | [KMP、Border 理论与失配树（1-index；自动机为赛后附录）](string/kmp-and-border-theory/kmp-and-border-theory.md) | [exercise](string/kmp-and-border-theory/kmp-and-border-theory-exercises.md) |
 | string | [随机数与字符串哈希](string/randomness-and-string-hashing/randomness-and-string-hashing.md) | [exercise](string/randomness-and-string-hashing/randomness-and-string-hashing-exercises.md) |
 
+数论的补充证明：[扩展欧几里得：系数界、唯一性与中间值](mathematics/number-theory/extended-euclid-coefficient-bounds.md)。该文放在现有数论目录中，不另加训练题。
+
 其他知识点放在 [misc/](misc/readme.md)，目前尚无独立专题。线性基按数学原理归入 mathematics；启发式合并与 DSU on Tree 归入 graph and tree。
 
 ## 比赛复盘
@@ -50,4 +52,5 @@
 ## 训练复盘
 
 - [2026-10-27：KMP 收尾与线性基入门](misc/training-recaps/2026-10-27.md)
+
 
