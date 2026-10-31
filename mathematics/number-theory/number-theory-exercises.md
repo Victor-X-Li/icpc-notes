@@ -46,19 +46,7 @@ $$v_p(n!)=\sum_{t\ge1}\left\lfloor\frac n{p^t}\right\rfloor\ge e_p.$$
 
 ## 4. ABC193 E — Oversleeping
 
-[原题](https://atcoder.jp/contests/abc193/tasks/abc193_e)
-
-两个活动分别在每个周期 $2(X+Y)$ 的区间 $[X,X+Y)$、每个周期 $P+Q$ 的区间 $[P,P+Q)$ 内开启。求最早同时开启的时刻。
-
-枚举第一周期内的活跃余数 $a=X,\ldots,X+Y-1$ 与 $b=P,\ldots,P+Q-1$。每对解广义 CRT：
-
-$$t\equiv a\pmod{2(X+Y)},\qquad t\equiv b\pmod{P+Q}.$$
-
-设两周期为 $M_1,M_2$，代入 $t=a+M_1k$，得到 $M_1k\equiv b-a\pmod{M_2}$；令 $d=\gcd(M_1,M_2)$，仅当 $d\mid b-a$ 时有解，约分求逆得到最小非负 $k$，再把 $t$ 归一化到 $[0,\operatorname{lcm}(M_1,M_2))$。所有可行余数对的最小解取最小值，全部无解输出 `infinity`。
-
-枚举为什么完整？任意同时开启的整数时刻在两个周期内各有一个活跃余数；每个 CRT 解又确实落在对应活跃时段。半开区间右端不活跃，因此不能枚举到 $X+Y$ 或 $P+Q$。
-
-题目允许枚举的是短活跃区间 $Y,Q\le500$，不是长度可能很大的整个周期。时间 $O(YQ\log V)$、额外空间 $O(\log V)$（递归扩欧）。周期乘积及 CRT 中间乘法用足够宽的整数，先除 GCD 再乘可减少溢出。
+本题需要处理非互质周期，完整分析已移至[数论延伸习题第 1 题](../number-theory-extensions/number-theory-extensions-exercises.md#1-abc193-e--oversleeping)。原题号保留作旧链接入口，不属于普通 CRT 训练。
 
 ## 5. CF1295 D — Same GCDs
 
@@ -394,3 +382,84 @@ $$
 构造和读取耗时 $O(M)$。设环数为 $q=9$，CRT 可界为 $O(q\log P)$；保存数组占 $O(M)$ 空间。虽然 $P$ 能放进 32 位有符号整数，公式中的乘积仍不能默认使用 32 位。
 
 这是实际交互题：输出构造后要 flush，再读取回复；不能读入不存在的隐藏 $N$，也不能输出调试信息。收到 `-1` 时立即退出；输出最终答案并 flush 后也要结束。尚未熟悉交互时，可以先自行指定 $N$，按各段环的位移生成模拟回复 $B$，验证重建过程，再按原题协议提交。
+
+
+
+## 16. CF687 B — Remainders Game
+
+[做题入口](https://vjudge.net/problem/CodeForces-687B) · [原题](https://codeforces.com/problemset/problem/687/B) · [官方题解](https://codeforces.com/blog/entry/45770)
+
+给定 $c_1,\ldots,c_n$ 和 $k$，可以知道同一个未知正整数 $x$ 模各个 $c_i$ 的余数。问这些信息是否总能唯一确定 $x\bmod k$。原题 $n,k,c_i\le10^6$。
+
+这题不要求把 $x$ 真正算出来。两个候选正整数 $x,y$ 给出完全相同的观测，当且仅当每个 $c_i$ 都整除 $x-y$。令 $L=\operatorname{lcm}(c_1,\ldots,c_n)$，等价于 $L\mid x-y$。
+
+若 $k\mid L$，相同观测的任意两个候选必有 $k\mid x-y$，所以目标余数相同。若 $k\nmid L$，取正整数 $x=1,y=1+L$，各项观测相同，但目标余数不同。因此
+
+$$
+\boxed{\text{能确定目标余数}\iff k\mid L.}
+$$
+
+它也可以只用普通 CRT 理解：将 $k$ 分成两两互质的完整质数幂。每个这样的质数幂必须被某个 $c_i$ 完整包含，观测才能给出该模数下的信息；齐全后由普通 CRT 唯一恢复模 $k$ 的余数。输入的 $c_i$ 本身不保证互质，但这里不需要求解任意非互质同余方程组，也不需要广义 CRT 的合并算法。
+
+直接生成 $L$ 可能溢出。只保留与目标有关的部分，令 $d_i=\gcd(c_i,k)$，维护
+
+$$
+w=\operatorname{lcm}(d_1,\ldots,d_i).
+$$
+
+逐质数比较指数，可知最终 $w=\gcd(L,k)$，故答案等价于 $w=k$。每个 $d_i$ 都整除 $k$，所以维护过程始终有 $w\mid k$、$w\le k$，不需要构造巨大的原始 LCM。
+
+初始化 $w=1$，更新为 $w/\gcd(w,d_i)\cdot d_i$。$k=1$ 时目标余数总是零，直接可判定。时间 $O(n\log(k+1))$，可流式读取、额外空间 $O(1)$。例：$c=[6,10],k=15$ 时，$d=[3,5]$，最终 $w=15$；$c=[2,3],k=7$ 时，$w=1$，答案为否。
+
+## 17. CF919 E — Congruence Equation
+
+[做题入口](https://vjudge.net/problem/CodeForces-919E) · [原题](https://codeforces.com/problemset/problem/919/E) · [官方题解页](https://codeforces.com/blog/entry/57462)
+
+给定质数 $p$、$1\le a,b<p$ 和 $x$，数满足 $1\le n\le x$ 且
+
+$$
+na^n\equiv b\pmod p
+$$
+
+的整数 $n$。原题 $p\le10^6+3,x\le10^{12}$。下面独立展开普通 CRT 的路线，不依赖原根、乘法阶或离散对数。
+
+由费马小定理，$a^{p-1}\equiv1\pmod p$，所以指数部分只需要 $n\bmod(p-1)$。固定
+
+$$
+r=n\bmod(p-1),\qquad0\le r<p-1,
+$$
+
+原方程变成 $na^r\equiv b\pmod p$。$a^r$ 可逆，因而
+
+$$
+n\equiv v_r=b(a^{-1})^r\pmod p.
+$$
+
+于是要合并
+
+$$
+n\equiv r\pmod{p-1},\qquad n\equiv v_r\pmod p.
+$$
+
+这里两模数相邻，必然互质，正是普通 CRT。每个 $r$ 确定模 $P=p(p-1)$ 的一个剩余类。没有必要证明 $P$ 是最小周期；只要它是共同周期，就足以在这些类中计数。
+
+本题还可省去通用 CRT 调用。令 $n=r+(p-1)t$，因为 $p-1\equiv-1\pmod p$，得到 $r-t\equiv v_r\pmod p$，故
+
+$$
+t=(r-v_r)\bmod p,\qquad n_r=r+(p-1)t,
+$$
+
+其中 $t$ 归一化到 $[0,p)$，所以 $0\le n_r<P$。又因 $v_r\ne0$，不可能 $n_r=0$，故它已经是本类最小正解。该类对答案的贡献为
+
+$$
+\begin{cases}
+0,&n_r>x,\\
+1+\left\lfloor\dfrac{x-n_r}{P}\right\rfloor,&n_r\le x.
+\end{cases}
+$$
+
+为什么不重不漏？任意合法 $n$ 有唯一的 $r=n\bmod(p-1)$，在这一次枚举中被计算；反过来，两条同余保证 $a^n\equiv a^r$ 及 $n\equiv v_r$，所以每个计入的数都满足原方程。不同 $r$ 不可能计算同一个整数。
+
+先用一次快速幂求 $a^{-1}\bmod p$，从 $v_0=b$ 开始，每轮乘一次 $a^{-1}$ 更新到 $v_{r+1}$，不对每个 $r$ 重复快速幂。总时间 $O(p+\log p)$，额外空间 $O(1)$。周期 $p(p-1)$、候选 $n_r$、乘法中间量与计数答案使用 64 位整数。
+
+$p=2$ 时只有 $r=0$，模 $p-1=1$ 的约束为空，推导仍成立；本题 $a=b=1$，答案为 $[1,x]$ 中奇数的个数。样例 $a=2,b=3,p=5,x=8$ 的合法整数为 2、8，计数为 2。

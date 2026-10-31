@@ -2,7 +2,7 @@
 
 ## 专题讲解
 
-每个小专题单独建目录，讲解与对应的 `-exercises.md` 放在同一目录。以下 16 个专题均有配套习题分析。
+每个小专题单独建目录，讲解与对应的 `-exercises.md` 放在同一目录。以下 17 个专题均有配套习题分析。
 
 | 分类 | 小专题与讲解 | 习题分析 |
 | --- | --- | --- |
@@ -16,6 +16,7 @@
 | mathematics | [数学期望](mathematics/expected-value/expected-value.md) | [exercise](mathematics/expected-value/expected-value-exercises.md) |
 | mathematics | [容斥原理](mathematics/inclusion-exclusion/inclusion-exclusion.md) | [exercise](mathematics/inclusion-exclusion/inclusion-exclusion-exercises.md) |
 | mathematics | [ICPC 数论：欧拉筛、CRT 与常用定理](mathematics/number-theory/number-theory.md) | [exercise](mathematics/number-theory/number-theory-exercises.md) |
+| mathematics | [数论延伸：广义 CRT 与一次式取整求和](mathematics/number-theory-extensions/number-theory-extensions.md) | [exercise](mathematics/number-theory-extensions/number-theory-extensions-exercises.md) |
 | mathematics | [组合数学](mathematics/combinatorics/combinatorics.md) | [exercise](mathematics/combinatorics/combinatorics-exercises.md) |
 | mathematics | [组合数学 + DP](mathematics/combinatorial-dp/combinatorial-dp.md) | [exercise](mathematics/combinatorial-dp/combinatorial-dp-exercises.md) |
 | mathematics | [线性基与异或空间（含最值、排名参考代码与团队比赛回练）](mathematics/xor-basis/xor-basis.md) | [exercise](mathematics/xor-basis/xor-basis-exercises.md) |
@@ -52,5 +53,6 @@
 ## 训练复盘
 
 - [2026-10-27：KMP 收尾与线性基入门](misc/training-recaps/2026-10-27.md)
+
 
 

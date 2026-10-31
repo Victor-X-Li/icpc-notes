@@ -13,7 +13,7 @@
 
 表里的方向不是互相独立的专题：同一道题往往需要先换一次表达，再换一次。比如“两个周期何时同步”，先变成两个剩余类的交集，再变成一个线性同余，最后由 GCD 判定有没有解。
 
-范围沿用你之前的训练要求：基础数论工具与建模为主，包含欧拉筛与基础积性函数的批量计算、CRT、整除分块；不展开原根与乘法阶、Lucas、莫比乌斯反演、狄利克雷卷积或进阶数论筛法。容斥已经有[单独一篇](../inclusion-exclusion/inclusion-exclusion.md)，这里只保留它与数论的接点。第 10 节是取整求和的可选延伸，不是阅读主线的前置条件。
+范围沿用你之前的训练要求：基础数论工具与建模为主，包含欧拉筛与基础积性函数的批量计算、CRT、整除分块；不展开原根与乘法阶、Lucas、莫比乌斯反演、狄利克雷卷积或进阶数论筛法。容斥已经有[单独一篇](../inclusion-exclusion/inclusion-exclusion.md)，这里只保留它与数论的接点。广义 CRT 与一次式取整求和已移至[数论延伸](../number-theory-extensions/number-theory-extensions.md)，本篇第 6 节只保留两两互质模数的普通 CRT。
 
 默认你熟悉整除、素数和模运算的定义，不从头建立公理化体系。关键结论会证明，尤其是那些能告诉我们“为什么应该这样建模”的证明。除特别说明外，参与分解与计数的整数为正，模数为正；逆元和欧拉定理主要讨论模数 $m\ge2$。复杂度按竞赛中固定宽度整数的算术模型计算，不涉及任意精度整数的位复杂度。
 
@@ -346,7 +346,7 @@ $$
 
 模数为 1 的约束对任何整数都成立，可以删去；下面设每个 $m_i\ge2$。余数 $a_i$ 可以先归一化到 $[0,m_i)$。
 
-先从两两互质的情形开始。我们用线性同余和逆元直接构造解，再说明为什么得到的是全部解。这里最值得看清的是：**两两互质让各条余数条件可以独立指定，而不会互相冲突。** 后面再讨论模数不互质时，怎样逐条合并剩余类。
+先从两两互质的情形开始。我们用线性同余和逆元直接构造解，再说明为什么得到的是全部解。这里最值得看清的是：**两两互质让各条余数条件可以独立指定，而不会互相冲突。** 模数不互质时的合并另见[数论延伸](../number-theory-extensions/number-theory-extensions.md)。
 
 #### 先找一个数，让它只负责一条同余式
 
@@ -499,84 +499,26 @@ $$
 
 仍用刚才的例子。先得到 $r=2,M=3$。加入模 5 的余数 3 时，$3t\equiv1\pmod5$，取 $t=2$，于是 $r=8,M=15$；再加入模 7 的余数 2，$15t\equiv-6\pmod7$，取 $t=1$，于是 $r=23,M=105$。
 
-两种构造的区别在于保留哪些信息。直接公式先做好每条约束自己的系数，再相加；逐条合并则每次调整当前代表，同时保留所有旧条件。两者都用到了“找一个不破坏其他条件的改变量，再用逆元满足当前条件”。熟练其中一种即可实现 CRT，但直接构造能更清楚地说明余数为何独立，逐条合并则更方便连接原 notes 中的非互质情形。
+两种构造的区别在于保留哪些信息。直接公式先做好每条约束自己的系数，再相加；逐条合并则每次调整当前代表，同时保留所有旧条件。两者都用到了“找一个不破坏其他条件的改变量，再用逆元满足当前条件”。熟练其中一种即可实现 CRT，但直接构造能更清楚地说明余数为何独立，逐条合并也便于以后衔接[另篇的广义 CRT](../number-theory-extensions/number-theory-extensions.md)。
 
 > **建模练习**：[ACL Contest 1 B — Sum is Multiple](https://atcoder.jp/contests/acl1/tasks/acl1_b)（估算难度 2100；AtCoder，2020）。把整数整除要求转成适合 CRT 的条件；额外前置：约数枚举、唯一分解。无需广义 CRT。完整分析见[配套第 14 题](number-theory-exercises.md#14-acl-contest-1-b--sum-is-multiple)。
 
 > **迁移练习，可后做**：[ABC286 F — Guess The Number 2](https://atcoder.jp/contests/abc286/tasks/abc286_f)（估算难度 2200；AtCoder，2023）。练习自己设计可观测的周期信息，再恢复一个有范围限制的整数。额外前置：置换环；这是交互题，需要遵守输出与 flush 协议。完整分析见[配套第 15 题](number-theory-exercises.md#15-abc286-f--guess-the-number-2)。
 
-### 一般情形：把两个剩余类合并
+### 普通 CRT 的分层练习
 
-设已经有两条约束
+以下练习都不要求广义 CRT。前两道侧重信息能否确定与整数条件的转换，后两道侧重构造和周期计数；先看原题，不预读配套完整分析。已有解题记忆时可按复现处理，不将它们保证为未见新题。
 
-$$
-x\equiv a\pmod m,\qquad x\equiv b\pmod n.
-$$
+| 题目 | 独立估算 CF 难度 | 定位与额外前置 |
+| --- | ---: | --- |
+| [CF687 B — Remainders Game](https://vjudge.net/problem/CodeForces-687B) | 1900 | 普通 CRT 的信息唯一性应用；也可直接用 GCD/LCM 性质完成，不练数值恢复。2016 年旧题，保留用于区分“求出原数”和“确定目标余数”。 |
+| [ACL Contest 1 B — Sum is Multiple](https://atcoder.jp/contests/acl1/tasks/acl1_b) | 2100 | 普通 CRT 建模；约数枚举、唯一分解。 |
+| [ABC286 F — Guess The Number 2](https://atcoder.jp/contests/abc286/tasks/abc286_f) | 2200 | 普通 CRT 构造；置换环、交互协议。 |
+| [CF919 E — Congruence Equation](https://vjudge.net/problem/CodeForces-919E) | 2300 | 普通 CRT 与周期计数；需先读第 7 节的费马小定理。2018 年旧题，保留用于检验两个不同模数的信息如何组合。 |
 
-第一条告诉我们 $x=a+mt$。代入第二条，就得到熟悉的线性同余
+AtCoder 两题的 VJudge 对应页尚未核对成功，暂保留原题入口。ACL1 B、ABC286 F 的原有完整分析分别保留在[配套第 14 题](number-theory-exercises.md#14-acl-contest-1-b--sum-is-multiple)、[第 15 题](number-theory-exercises.md#15-abc286-f--guess-the-number-2)；新补两题见[第 16 题](number-theory-exercises.md#16-cf687-b--remainders-game)、[第 17 题](number-theory-exercises.md#17-cf919-e--congruence-equation)。
 
-$$
-mt\equiv b-a\pmod n.
-$$
-
-令 $g=\gcd(m,n)$，于是
-
-$$
-\boxed{\text{两式兼容}\iff g\mid(b-a).}
-$$
-
-兼容时，约分后求出
-
-$$
-t\equiv\frac{b-a}{g}\left(\frac mg\right)^{-1}\pmod{n/g}.
-$$
-
-取一个代表 $t_0$，就得到
-
-$$
-\boxed{x\equiv a+mt_0\pmod{\operatorname{lcm}(m,n)}.}
-$$
-
-这既是构造，也是全部解的证明：$t$ 每增加 $n/g$，$x$ 增加 $mn/g$；而线性同余告诉我们没有其他 $t$。因此不只找到了某个交点，还把整组交点重新压成了一条等差数列。
-
-例如 $x\equiv2\pmod6$、$x\equiv5\pmod9$。设 $x=2+6t$，得到 $2t\equiv1\pmod3$，所以 $t\equiv2\pmod3$，最终
-
-$$
-x\equiv14\pmod{18}.
-$$
-
-若第二式改为 $x\equiv4\pmod9$，两条约束在模 $3$ 下要求不同结果，就无解。非互质模数下的问题不是“公式要多补一个逆元”，而是约束本身可能冲突。
-
-![非互质模数的余数组合不一定兼容](../../asset/nt-crt-compatible-residues.png)
-
-图中横纵坐标分别是模 $6$、模 $9$ 的余数。一个整数只会落在两坐标模 $3$ 相同的格子里。蓝点共有 $18=\operatorname{lcm}(6,9)$ 个，与模 $18$ 的全部整数一一对应；并不是 $6\times9$ 个格子都可取。
-
-### 为什么互质模数能够真正独立选择？
-
-当 $\gcd(m,n)=1$，兼容条件自动满足。因此每一对余数 $(a\bmod m,b\bmod n)$ 都唯一对应一个模 $mn$ 的整数。这才是“先在两个模数下独立求解，再组合答案”的依据。
-
-特别地，$M=\prod p^{e_p}$ 的不同质数幂两两互质。若某个问题的条件能逐个模 $p^{e_p}$ 检查，可以分别处理，再用 CRT 合并。这与第 4 节的指数分解相呼应，但并不是所有关于整数的条件都能这样拆：普通大小关系、整数加和范围不属于单独一个剩余类的信息。
-
-多条同余可以顺次合并，只维护当前的最小非负代表和模数。一次合并使用扩展欧几里得，耗时为模数大小的对数级；$k$ 条约束在最终 LCM 适合固定宽度整数的前提下，可界为 $O(k\log M)$。有约分模数 $n/g=1$ 时，该条已经被包含，取 $t_0=0$ 即可。
-
-得到 $x\equiv r\pmod M$ 后，如果题目还要求 $x\ge L$，最小解是
-
-$$
-r+M\left\lceil\frac{L-r}{M}\right\rceil.
-$$
-
-区间 $[L,R]$ 内的解数为
-
-$$
-\left\lfloor\frac{R-r}{M}\right\rfloor-
-\left\lfloor\frac{L-1-r}{M}\right\rfloor.
-$$
-
-CRT 负责把等式约束合并，区间与最小值要求再沿这条等差数列处理。这比为了“最早同步”直接模拟到某个巨大时间可靠得多。
-
-计算 $\operatorname{lcm}(m,n)$ 应先除以 GCD 再乘；即使最终 LCM 能保存，构造解时的中间乘积也可能更大。公式正确与所用整数类型能否承载运算，是两件要分别核查的事。
-
-> **练习**：[ABC193 E — Oversleeping](https://atcoder.jp/contests/abc193/tasks/abc193_e)（约 2300；2021）。关键在于识别哪些周期内的候选足够少，可以先枚举，再合并各自的同余条件。
+非互质模数的合并、相应无解条件与 ABC193 E 已移至[数论延伸](../number-theory-extensions/number-theory-extensions.md)，不作为本节普通 CRT 练习的前置。
 
 ## 7. 欧拉函数：先把它当作互质的计数，再看它为什么能控制幂
 
@@ -953,55 +895,7 @@ $$
 
 > **练习**：[CF616 E — Sum of Remainders](https://codeforces.com/problemset/problem/616/E)（约 2200；2016）。虽是较早的题，但它很适合检验带权分块以及零商尾部的处理，保留作本节的应用练习。
 
-## 10. 可选延伸：分子是一次式时，取整求和怎样再次回到欧几里得算法？
-
-整除分块处理 $\lfloor N/i\rfloor$；另一种常见结构则是
-
-$$
-F(n,m,a,b)=\sum_{i=0}^{n-1}\left\lfloor\frac{ai+b}{m}\right\rfloor,
-$$
-
-其中 $n,a,b\ge0,m\ge1$。不要因为它也含有取整，就照搬上一节的分块式：现在变化的是分子，结构不一样。
-
-先把明显的整数部分拆出来。写 $a=qm+a'$、$b=rm+b'$，则
-
-$$
-F(n,m,a,b)=q\frac{n(n-1)}2+rn+F(n,m,a',b').
-$$
-
-于是只需处理 $0\le a,b<m$。若 $n=0$ 或 $a=0$，这时剩余和为零。否则令
-
-$$
-h=\left\lfloor\frac{a(n-1)+b}{m}\right\rfloor.
-$$
-
-把每一项的商想成该列下方的整数点数。固定高度 $y\in[1,h]$，这层哪些列被计算？需要
-
-$$
-my\le ai+b
-\iff i\ge\left\lceil\frac{my-b}{a}\right\rceil.
-$$
-
-因为 $b<m$，这个阈值为正；又因为 $y\le h$，它不超过 $n-1$。所以本层有 $n-\lceil(my-b)/a\rceil$ 列。改为逐层求和，并令 $j=y-1$，得到
-
-$$
-\boxed{F(n,m,a,b)
-=nh-F(h,a,m,m-b+a-1).}
-$$
-
-若 $h=0$，右侧也直接为零。关键在于右边的**新模数是原来的 $a$，严格小于 $m$**。下一次再拆出分子的整数部分，就出现 $m\bmod a$；参数像欧几里得算法一样下降，总递归层数为 $O(\log m)$。这一式与常用 floor_sum 模板的写法可能不同，但数的是同一批整数点。
-
-例如 $n=4,m=5,a=2,b=1$，原和为 $0+0+1+1=2$。$h=1$，上式给出
-
-$$
-4-F(1,2,5,5)=4-2=2.
-$$
-
-这段推导值得理解的地方不是背递推式，而是：**按列不好求和，就改成按高度数；交换以后，原来的斜率分子与分母互换。** 本篇只讨论非负参数，负参数必须先用数学意义的下取整归约，不能直接依赖向零截断的整数除法。
-
-如果需要检查接口或实际实现，可以参考 [AtCoder Library 的 floor_sum](https://atcoder.github.io/ac-library/production/document_en/math.html)。使用前核对它的参数范围和返回值溢出约定；数学公式本身不保证所有中间结果都适合 64 位。
-
-## 11. 怎样把这些工具用到一道没见过的题里？
+## 10. 怎样把这些工具用到一道没见过的题里？
 
 先把原题中的量词和范围写清。允许整数还是只允许非负数？要求至少有一个公因子、GCD 恰好等于某数，还是两两互质？模数是否为素数？最后要完整分布，还是只求一个总和？这些差别往往决定了能否使用某个定理。
 
@@ -1014,14 +908,14 @@ $$
 ## 参考与进一步阅读
 
 - [MIT 18.781 数论讲义目录](https://ocw.mit.edu/courses/18-781-theory-of-numbers-spring-2012/pages/lecture-notes/)：本篇对应 Lecture 1–5 中的基础部分。特别是 [Lecture 5：线性同余与 CRT](https://ocw.mit.edu/courses/18-781-theory-of-numbers-spring-2012/7b36e2ada32c5ed0638783d4e66af60c_MIT18_781S12_lec5.pdf)，可以核对剩余类、约分后的解数与欧拉函数的联系。不要求按该课程后续章节继续扩展范围。
-- [AtCoder Library：Math](https://atcoder.github.io/ac-library/production/document_en/math.html)：逆元、CRT、floor_sum 的官方接口、前提与复杂度。本文的 floor_sum 使用按高度求和的独立推导，式子不必与库中的循环逐行对应。
+- [AtCoder Library：Math](https://atcoder.github.io/ac-library/production/document_en/math.html)：逆元与 CRT 的官方接口、前提与复杂度。库的 `crt` 也支持非互质模数；相关证明及 floor_sum 已移至数论延伸。
 - [Nisiyama_Suzune：Math note — linear sieve](https://codeforces.com/blog/entry/54090)：第 7 节的对照阅读，重点看最小质因子的唯一生成，以及积性函数在新质因子、重复质因子两种情况下的更新。本文进一步展开了 $\tau$ 的指数与互质部分状态，避免将整数约分直接套到取模后的值上。
 - [Nisiyama_Suzune：Math note — Möbius inversion](https://codeforces.com/blog/entry/53925)：可对照前置引理中的积性保持、整除分块，以及 Example 1、2 的互质点对与 GCD 求和模型。本文对互质正方形点对采用按较大坐标分类的 $\varphi$ 前缀和证明，GCD 求和采用第 8 节的约数贡献；这两部分均可用当前工具完成，不要求先读其反演与后续 LCM 推导。
 - [Nisiyama_Suzune：Math note — Dirichlet convolution](https://codeforces.com/blog/entry/54150)：这里只借鉴“先证明积性，再在质数幂处验证”的思路，并用约数和给出完整证明。原文从 Optimization technique 开始的大范围前缀和递归与阈值优化，留作以后学习的内容；普通筛后前缀和与它处理的数据范围不同。
-- [ABC186 E 官方解说](https://atcoder.jp/contests/abc186/editorial/422)、[ABC193 E 官方解说](https://atcoder.jp/contests/abc193/editorial/818)：线性同余与周期同步的直接竞赛应用，建议完成练习后核对。
+- [ABC186 E 官方解说](https://atcoder.jp/contests/abc186/editorial/422)：线性同余的直接竞赛应用，建议完成练习后核对。
 - [ABC162 官方解说 PDF](https://img.atcoder.jp/abc162/editorial.pdf)，E 题：按 GCD 精确分类的从大到小扣除法。本篇还用欧拉函数的约数恒等式推导了直接加权计数的另一条路线。
 - [CF1750 D 官方题解](https://codeforces.com/blog/entry/108504)、[CF2037 G 官方题解](https://codeforces.com/blog/entry/135533)：互质区间计数与不同质因子的加权容斥。只需其中基础工具的路线，不要求先学更高级的筛法或反演。
 - [Number Theory: In Context，§5.4 Using the Chinese Remainder Theorem](https://www.math.gordon.edu/ntic/ntic/section-using-crt.html)：直接构造、逆元存在性、唯一性，以及从小模数恢复大模数信息。
 - [University of Maryland，Math 406 §4.3](https://www.math.umd.edu/~immortal/MATH406/lecturenotes/ch4-3.pdf)：两两互质 CRT 的构造证明。这里只使用其 CRT 部分。
 - [ACL Contest 1 B 官方题解](https://atcoder.jp/contests/acl1/editorial/118)；[ABC286 F 官方题解](https://atcoder.jp/contests/abc286/editorial/6449)。两题的关键推导见配套习题分析第 14、15 题。
-
+- [CF687 B 官方题解](https://codeforces.com/blog/entry/45770)、[CF919 E 官方题解页](https://codeforces.com/blog/entry/57462)：余数信息的确定性与周期计数。CF919 E 的普通 CRT 路线由配套第 17 题独立展开；不要求原根或离散对数。
