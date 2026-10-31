@@ -39,6 +39,7 @@
 | [AtCoder ABC480](contest/ABC480-A-G.md) | A–G 题解与参考实现 |
 | [AtCoder ABC481](contest/abc481-review.md) | E、F、G 完整分析 |
 | [Codeforces Round 1129 (Div. 2)，CF2277](contest/cf-2277-review.md) | C、E、F 完整分析 |
+| [AtCoder ABC482](abc482-review.md) | D、E、F：轨迹交换、直径中心与分阶段最短路 |
 
 ## 文件与同步约定
 

@@ -9,3 +9,4 @@
 | AtCoder ABC480 | [A–G 题解与参考实现](ABC480-A-G.md) |
 | AtCoder ABC481 | [E、F、G](abc481-review.md) |
 | Codeforces Round 1129 (Div. 2)，CF2277 | [C、E、F](cf-2277-review.md) |
+| AtCoder ABC482 | [D、E、F：轨迹交换、直径中心与分阶段最短路](../abc482-review.md) |
