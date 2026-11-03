@@ -4,6 +4,8 @@
 
 每个小专题单独建目录，讲解与对应的 `-exercises.md` 放在同一目录。以下 17 个专题均有配套习题分析。
 
+专题正文已按 caveman 风格精简：删重复与铺垫，保留推导、证明、条件、公式、代码和图片；习题分析与比赛复盘保留完整讲解。
+
 | 分类 | 小专题与讲解 | 习题分析 |
 | --- | --- | --- |
 | data structure | [01 Trie 与二进制建模（含整体异或、阈值计数与第 k 小例题）](data-structure/binary-trie/binary-trie.md) | [exercise](data-structure/binary-trie/binary-trie-exercises.md) |
