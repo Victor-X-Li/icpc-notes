@@ -414,8 +414,8 @@ $$
 - [ABC061 D — Score Attack（独立估算 CF 1800）](https://atcoder.jp/contests/abc061/tasks/abc061_d)
 - [ABC137 E — Coins Respawn（独立估算 CF 1900）](https://atcoder.jp/contests/abc137/tasks/abc137_e)
 - [ABC404 G — Specified Range Sums（独立估算 CF 2300）](https://atcoder.jp/contests/abc404/tasks/abc404_g)
-- [CF237 E — Build String（独立估算 CF 2100，费用流拓展）](https://codeforces.com/problemset/problem/237/E)
-- [CF277 E — Binary Tree on Plane（独立估算 CF 2400，费用流拓展）](https://codeforces.com/problemset/problem/277/E)
+- [CF1131 D — Gourmet choice（独立估算 CF 2000）](https://codeforces.com/problemset/problem/1131/D)
+- [ARC015 C — 変わった単位（独立估算 CF 1900）](https://atcoder.jp/contests/arc015/tasks/arc015_3)
 
 ## 8. 目标不是边权和时，检查同一个证明还能不能成立
 
