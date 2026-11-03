@@ -409,6 +409,14 @@ $$
 
 > **练习（估算 CF 难度）**：[Skiing](https://atcoder.jp/contests/abc237/tasks/abc237_e)（约 2000）。
 
+### SPFA 补充练习
+
+- [ABC061 D — Score Attack（独立估算 CF 1800）](https://atcoder.jp/contests/abc061/tasks/abc061_d)
+- [ABC137 E — Coins Respawn（独立估算 CF 1900）](https://atcoder.jp/contests/abc137/tasks/abc137_e)
+- [ABC404 G — Specified Range Sums（独立估算 CF 2300）](https://atcoder.jp/contests/abc404/tasks/abc404_g)
+- [CF237 E — Build String（独立估算 CF 2100，费用流拓展）](https://codeforces.com/problemset/problem/237/E)
+- [CF277 E — Binary Tree on Plane（独立估算 CF 2400，费用流拓展）](https://codeforces.com/problemset/problem/277/E)
+
 ## 8. 目标不是边权和时，检查同一个证明还能不能成立
 
 有些问题也能用优先队列定型，但路线代价不是边权之和。例如要求最小化沿途最大边权：
