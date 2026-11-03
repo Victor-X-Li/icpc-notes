@@ -144,6 +144,8 @@ $$
 
 左边说严格小于 $v$ 的项还不足 $k$ 个，右边说加入所有等于 $v$ 的项后已经达到第 $k$ 项。重复值按出现次数占据名次。直接沿 Trie 选择分支只需 $O(W)$，不必先将全部异或结果排好序。
 
+**第 $k$ 小例题：[ABC241 D — Sequence Query](https://atcoder.jp/contests/abc241/tasks/abc241_d)**（独立估算约 1600；AtCoder ABC241，2022）。动态插入元素，查询“不小于 $x$ 的元素中第 $k$ 小”，以及“不大于 $x$ 的元素中第 $k$ 大”。先用 $C(0,x)$ 或 $C(0,x+1)$ 确定被跳过的元素数量，再转成整个多重集上的第几小，正好把阈值计数与分支选排名连起来。原题 $k\le5$，也可用 `multiset`；这里建议用带计数的 01 Trie 练习一般排名查询。完整分析见[配套第 8 题](binary-trie-exercises.md#8-abc241-d--sequence-query)。
+
 ### 整体异或：树里的数与当前实际值怎样对应？
 
 给所有元素同时异或一个数时，可以维护掩码 $L$，约定树里保存的 $s$ 当前代表实际值 $s\oplus L$。全体异或 $t$，只需更新 $L\gets L\oplus t$。
@@ -159,6 +161,10 @@ $$
 所以实际集合上的阈值计数、最值、第 $k$ 小，都能归约为原 Trie 上对应的异或查询。新插入实际值 $z$ 时，存入 $z\oplus L$；删去实际值也使用同样转换。例如 $L=3$ 时插入实际值 4，要存入 $4\oplus3=7$，而 $7\oplus3=4$，恰好符合约定。
 
 整体更新为 $O(1)$，其余操作仍为 $O(W)$。这里利用了异或的结合律和 $L\oplus L=0$；整体加法有进位，不能直接套用这个掩码方案。
+
+**整体异或例题一：[CF842 D — Vitya and Strange Lesson](https://codeforces.com/problemset/problem/842/D)**（独立估算约 2000；Codeforces Round 430，2017）。每次把整个数组异或 $t$，输出当前 mex，即最小未出现的非负整数。更新直接维护 $L$；查询时按实际值从小到大寻找缺失分支。额外要判断一棵子树是否已经占满全部可能值，因此本题计数必须按不同值去重，不能沿用多重集出现次数。完整分析见[配套第 9 题](binary-trie-exercises.md#9-cf842-d--vitya-and-strange-lesson)。
+
+**整体异或例题二（迁移）：[CF1980 G — Yasya and the Mysterious Tree](https://codeforces.com/problemset/problem/1980/G)**（独立估算约 2300；Codeforces Round 950，2024；额外前置：树上根路径异或、深度奇偶）。所有边权同时异或 $t$；给定 $v,x$，选择 $u\ne v$，最大化 $x$ 与 $u,v$ 路径边权的异或和。先判断整体修改如何影响根路径值，再按深度奇偶分成两棵 Trie，即可把树上更新归约为分组后的整体异或。适合在上一题后练建模，完整分析见[配套第 10 题](binary-trie-exercises.md#10-cf1980-g--yasya-and-the-mysterious-tree)。
 
 
 ## 3. 什么时候能把题目变成 Trie 查询？
