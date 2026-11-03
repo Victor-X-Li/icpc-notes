@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | data structure | [01 Trie 与二进制建模](data-structure/binary-trie/binary-trie.md) | [exercise](data-structure/binary-trie/binary-trie-exercises.md) |
 | data structure | [笛卡尔树与单调栈](data-structure/cartesian-tree-and-monotonic-stack/cartesian-tree-and-monotonic-stack.md) | [exercise](data-structure/cartesian-tree-and-monotonic-stack/cartesian-tree-and-monotonic-stack-exercises.md) |
-| graph and tree | [Dijkstra 进阶与最短路树](graph-and-tree/dijkstra-and-shortest-path-trees/dijkstra-and-shortest-path-trees.md) | [exercise](graph-and-tree/dijkstra-and-shortest-path-trees/dijkstra-and-shortest-path-trees-exercises.md) |
+| graph and tree | [Dijkstra 进阶与最短路树](graph-and-tree/dijkstra-and-shortest-path-trees/dijkstra-and-shortest-path-trees.md) · [SPFA 练习](graph-and-tree/dijkstra-and-shortest-path-trees/dijkstra-and-shortest-path-trees.md#spfa-补充练习) | [exercise](graph-and-tree/dijkstra-and-shortest-path-trees/dijkstra-and-shortest-path-trees-exercises.md) |
 | graph and tree | [DFS 树、Tarjan 与圆方树](graph-and-tree/dfs-tarjan-and-block-cut-trees/dfs-tarjan-and-block-cut-trees.md) | [exercise](graph-and-tree/dfs-tarjan-and-block-cut-trees/dfs-tarjan-and-block-cut-trees-exercises.md) |
 | graph and tree | [优化建图与隐式图](graph-and-tree/graph-modeling/graph-modeling.md) | [exercise](graph-and-tree/graph-modeling/graph-modeling-exercises.md) |
 | graph and tree | [LCA 的进阶性质与应用](graph-and-tree/lca-properties/lca-properties.md) | [exercise](graph-and-tree/lca-properties/lca-properties-exercises.md) |
