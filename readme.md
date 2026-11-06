@@ -11,7 +11,7 @@
 | data structure | [01 Trie 与二进制建模（含整体异或、阈值计数与第 k 小例题）](data-structure/binary-trie/binary-trie.md) | [exercise](data-structure/binary-trie/binary-trie-exercises.md) |
 | data structure | [笛卡尔树与单调栈](data-structure/cartesian-tree-and-monotonic-stack/cartesian-tree-and-monotonic-stack.md) | [exercise](data-structure/cartesian-tree-and-monotonic-stack/cartesian-tree-and-monotonic-stack-exercises.md) |
 | graph and tree | [Dijkstra 进阶与最短路树](graph-and-tree/dijkstra-and-shortest-path-trees/dijkstra-and-shortest-path-trees.md) · [Dijkstra 证明草稿](graph-and-tree/dijkstra-and-shortest-path-trees/Dijkstra.md) · [SPFA 与非最短路变形练习](graph-and-tree/dijkstra-and-shortest-path-trees/dijkstra-and-shortest-path-trees.md#spfa-补充练习) | [exercise](graph-and-tree/dijkstra-and-shortest-path-trees/dijkstra-and-shortest-path-trees-exercises.md) |
-| graph and tree | [SPFA 与差分约束的解（含 CF / AtCoder 进阶练习）](graph-and-tree/difference-constraints/difference-constraints.md) · [Bellman–Ford 与 SPFA 判负环](graph-and-tree/difference-constraints/difference-constraints.md#怎样判断负环) | [exercise](graph-and-tree/difference-constraints/difference-constraints-exercises.md) |
+| graph and tree | [SPFA 与差分约束的解（含 CF / AtCoder 进阶练习）](graph-and-tree/difference-constraints/difference-constraints.md) · [Bellman–Ford 与 SPFA 判负环（含 ABC137 E）](graph-and-tree/difference-constraints/difference-constraints.md#怎样判断负环) | [exercise](graph-and-tree/difference-constraints/difference-constraints-exercises.md) |
 | graph and tree | [DFS 树、Tarjan 与圆方树](graph-and-tree/dfs-tarjan-and-block-cut-trees/dfs-tarjan-and-block-cut-trees.md) | [exercise](graph-and-tree/dfs-tarjan-and-block-cut-trees/dfs-tarjan-and-block-cut-trees-exercises.md) |
 | graph and tree | [优化建图与隐式图](graph-and-tree/graph-modeling/graph-modeling.md) | [exercise](graph-and-tree/graph-modeling/graph-modeling-exercises.md) |
 | graph and tree | [LCA 的进阶性质与应用](graph-and-tree/lca-properties/lca-properties.md) | [exercise](graph-and-tree/lca-properties/lca-properties-exercises.md) |
@@ -30,6 +30,10 @@
 数论的补充证明：[扩展欧几里得：系数界、唯一性与中间值](mathematics/number-theory/extended-euclid-coefficient-bounds.md)。该文放在现有数论目录中，不另加训练题。
 
 其他知识点放在 [misc/](misc/readme.md)，目前尚无独立专题。线性基按数学原理归入 mathematics；启发式合并与 DSU on Tree 归入 graph and tree。
+
+## 专题检测题
+
+- [单调栈与单调队列](data-structure/monotonic-stack-and-queue/monotonic-stack-and-queue-exercises.md)（各 3 题）
 
 ## 比赛复盘
 
