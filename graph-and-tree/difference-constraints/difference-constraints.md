@@ -12,11 +12,15 @@
 
 练习 [P5960 差分约束](https://www.luogu.com.cn/problem/P5960)（估 CF 1400）。用它检查输入不等式的方向，以及互不连通的点是否都参与判环。[分析](difference-constraints-exercises.md#p5960)
 
+进阶练习 [CF241E Flights](https://codeforces.com/problemset/problem/241/E)（官方 CF 2600，独立估 2400）。给 DAG 的边赋权，使所有首尾路径等长。关键是先弄清哪些边才受这个条件约束。[分析](difference-constraints-exercises.md#cf241e)
+
 ## 超级源的最短路是逐点最大解
 
 超级源的零权边相当于加上 $x_i\le 0$，其中 $x_s=0$。对任何满足这些上界的可行解 $x$，沿 $s$ 到 $i$ 的最短路径相加，得到 $x_i\le d_i$。同时 $d$ 本身可行。所以在 $x_i\le0$ 的条件下，**同一组最短距离同时取到了每个坐标的最大值**，也就最大化了坐标和。若人为加入的只是这组零权边，原系统的可行性不变，因为任何原解都可以整体下移到非正。
 
 更一般地，源边 $s\xrightarrow{b_i}i$ 表示 $x_i\le b_i$。若带这些上界的系统有解，且每个点都从 $s$ 可达，最短距离就是带这些上界的逐点最大解。这也解释了为什么初始化会改变距离的含义。纯差分约束允许任意整体平移，原系统的单个坐标和坐标和都没有有限的极值。
+
+进阶练习 [AGC056 C 01 Balanced](https://atcoder.jp/contests/agc056/tasks/agc056_c)（估 CF 2400）。在若干平衡区间的约束下求字典序最小的二进制串。练习从前缀量的逐点最优恢复字典序最优。[分析](difference-constraints-exercises.md#agc056-c)
 
 零权超级源还有一个性质。设 $d$ 为它求出的解，必有 $\max_i d_i=0$，否则还能整体上移一点并保持所有坐标非正，与逐点最大矛盾。把任意原解 $x$ 整体平移成 $y_i=x_i-\max_j x_j$，则 $y_i\le d_i$。于是
 
@@ -49,6 +53,10 @@ $$
 从 $1$ 到 $4$ 的路径 $1\xrightarrow{10}3\xrightarrow{-3}2\xrightarrow{20}4$ 给出上界 $27$。位置 $(0,7,10,27)$ 满足顺序和三个约束，取到了上界。顺序本身还给出 $x_i-x_{i+1}\le0$，所以要建边 $i+1\xrightarrow{0}i$。这些边不能省。超级源的零权边只用于判全局可行，样例中用它求出的一个解是 $(-3,-3,0,0)$，两端相差仅 $3$。
 
 练习 [Layout，洛谷 P4878 / POJ 3169](https://www.luogu.com.cn/problem/P4878)（估 CF 1700）。实现完整题目，区分无解、无上界和有有限最大值三种输出。[分析](difference-constraints-exercises.md#poj-3169)
+
+进阶练习 [ABC216 G 01Sequence](https://atcoder.jp/contests/abc216/tasks/abc216_g)（估 CF 2100）。满足区间内 `1` 的个数下界，并构造 `1` 最少的序列。练习把总数写成指定差值，并选一种使边权非负的前缀量。[分析](difference-constraints-exercises.md#abc216-g)
+
+进阶练习 [CF Gym 103934 A The army of Thutmose III](https://codeforces.com/gym/103934/problem/A)（估 CF 2500）。每栋建筑至少要在施工期间被访问一次，求最小的单栋访问次数上限。练习离散化和二分可行性，最后从一组整数势恢复日期。[分析](difference-constraints-exercises.md#cf-gym-103934-a)
 
 ## 参考
 
